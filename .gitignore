@@ -1,0 +1,8 @@
+**/.DS_Store
+web_server/dbconfig/config.inc.php
+web_server/dbconfig/config.inc.python.json
+web_server/mapserv
+web_server_data
+wfs_server/geoserver-users.xml
+wfs_server/*.war
+wfs_server_data

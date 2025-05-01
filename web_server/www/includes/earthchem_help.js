@@ -1,0 +1,160 @@
+/* April 2008 EEJones
+The functions in this file are for the Help system: a popup div id='helpLayer' in ks_footer.html. It becomes visible when the user clicks a Help button. The layer is draggable. The Help system requires the functions in this file, and also a function changeContent(topic) that exists in a separate file because it is dynamically generated at a user's initiative in the edit help system (something like admin.help.php on neko) */
+
+function hideLayer(lay) { 
+if (document.getElementById) { // DOM3 = IE5, NS6 
+document.getElementById(lay).style.visibility = 'hidden'; 
+} 
+} 
+function showLayer(lay) { 
+if (document.getElementById) { // DOM3 = IE5, NS6 
+document.getElementById(lay).style.visibility = 'visible'; 
+} 
+} 
+
+function popHelp(event,topic) { 
+/* IE calculates the mouse coordinates relative to the window, while the rest do it relative to the document. 
+Read this: http://www.evolt.org/article/Mission_Impossible_mouse_position/17/23335/index.html */
+if (!event) var event = window.event // Some browsers will not take the event object as a parameter
+var x=0
+var y=0
+var xmax=0
+var ymax=0
+// Get the x,y position of the mouse on the document (not the screen)
+if (event.pageX || event.pageY) { // Most browsers support pageX/pageY
+	x = event.pageX;
+	y = event.pageY; argh='pageY'
+} else if (event.clientX || event.clientY) { // IE does not support pageX/pageY so we have to user clientX, and add any top or left dimension from scrolling
+	x = event.clientX + document.body.scrollLeft;
+	y = event.clientY + document.body.scrollTop; argh='clientY'
+}
+var intClientWidth=document.body.clientWidth  
+var intClientHeight=document.body.clientHeight  
+var intScrollLeft = document.body.scrollLeft;
+var intScrollTop = document.body.scrollTop;
+var coords=getViewportDimensions();
+var intViewportDimensionWidth=coords.width
+var intViewportDimensionHeight=coords.height
+var intOffsetWidth=document.body.offsetWidth
+var intOffsetHeight=document.body.offsetHeight
+var intScrollWidth=document.body.scrollWidth  
+var intScrollHeight=document.body.scrollHeight // the height of the page
+var xycoords='activated button position: x '+x+' y '+y+ '<br>argh! '+argh + 
+'<br>intClientWidth '+intClientWidth+' intClientHeight '+intClientHeight +
+'<br>intScrollLeft '+intScrollLeft+' intScrollTop '+intScrollTop +
+'<br>intViewportDimensionWidth '+intViewportDimensionWidth+' intViewportDimensionHeight '+intViewportDimensionHeight +
+'<br>intOffsetWidth '+intOffsetWidth+' intOffsetHeight '+intOffsetHeight +
+'<br>intScrollWidth '+intScrollWidth+' intScrollHeight '+intScrollHeight 
+xmax=intScrollWidth;
+if (x>xmax) {
+	x=xmax
+} else {
+	xmax=intOffsetWidth; 
+	if (x>xmax) {
+		x=xmax
+	}
+}
+ymax=intScrollHeight; if (y>ymax) {y=ymax}
+var newxcoords='<br>helpLayer position: x '+x+' y '+y
+helpLayer.style.left=x
+helpLayer.style.top=y
+showMe()
+changeContent('xyz-gradient')
+document.getElementById('mousecoords').innerHTML = xycoords + newxcoords
+
+}/* function doit repositions the helpLayer div near the cursor */
+
+function getViewportDimensions() {
+    var intH = 0, intW = 0;
+    
+    if(self.innerHeight) {
+       intH = window.innerHeight;
+       intW = window.innerWidth;
+    } 
+    else {
+        if(document.documentElement && document.documentElement.clientHeight) {
+            intH = document.documentElement.clientHeight;
+            intW = document.documentElement.clientWidth;
+        }
+        else {
+            if(document.body) {
+                intH = document.body.clientHeight;
+                intW = document.body.clientWidth;
+            }
+        }
+    }
+
+    return {
+        height: parseInt(intH, 10),
+        width: parseInt(intW, 10)
+    };
+}
+
+
+
+
+// Script Source: CodeLifter.com
+// Copyright 2003
+// Do not remove this header
+
+isIE=document.all;
+isNN=!document.all&&document.getElementById;
+isN4=document.layers;
+isHot=false;
+
+function ddInit(e){
+  topDog=isIE ? "BODY" : "HTML";
+  whichDog=isIE ? document.all.helpLayer : document.getElementById("helpLayer");  
+  hotDog=isIE ? event.srcElement : e.target;  
+  while (hotDog.id!="titleBar"&&hotDog.tagName!=topDog){
+    hotDog=isIE ? hotDog.parentElement : hotDog.parentNode;
+  }  
+  if (hotDog.id=="titleBar"){
+    offsetx=isIE ? event.clientX : e.clientX;
+    offsety=isIE ? event.clientY : e.clientY;
+    nowX=parseInt(whichDog.style.left);
+    nowY=parseInt(whichDog.style.top);
+    ddEnabled=true;
+    document.onmousemove=dd;
+  }
+}
+
+function dd(e){
+  if (!ddEnabled) return;
+  whichDog.style.left=isIE ? nowX+event.clientX-offsetx : nowX+e.clientX-offsetx; 
+  whichDog.style.top=isIE ? nowY+event.clientY-offsety : nowY+e.clientY-offsety;
+  return false;  
+}
+
+function ddN4(whatDog){
+  if (!isN4) return;
+  N4=eval(whatDog);
+  N4.captureEvents(Event.MOUSEDOWN|Event.MOUSEUP);
+  N4.onmousedown=function(e){
+    N4.captureEvents(Event.MOUSEMOVE);
+    N4x=e.x;
+    N4y=e.y;
+  }
+  N4.onmousemove=function(e){
+    if (isHot){
+      N4.moveBy(e.x-N4x,e.y-N4y);
+      return false;
+    }
+  }
+  N4.onmouseup=function(){
+    N4.releaseEvents(Event.MOUSEMOVE);
+  }
+}
+
+function hideMe(){
+  if (isIE||isNN) whichDog.style.visibility="hidden";
+  else if (isN4) document.helpLayer.visibility="hide";
+}
+
+function showMe(){
+  if (isIE||isNN) whichDog.style.visibility="visible";
+  else if (isN4) document.helpLayer.visibility="show";
+}
+
+document.onmousedown=ddInit;
+document.onmouseup=Function("ddEnabled=false");

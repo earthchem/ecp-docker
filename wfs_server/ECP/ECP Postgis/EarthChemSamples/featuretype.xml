@@ -1,0 +1,40 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-3d274ac1:16b9aaf240a:-7ffc</id>
+  <name>EarthChemSamples</name>
+  <nativeName>EarthChemSamples</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-3d274ac1:16b9aaf240a:-7ffe</id>
+  </namespace>
+  <title>EarthChemSamples</title>
+  <keywords>
+    <string>EarthChemSamples</string>
+    <string>features</string>
+  </keywords>
+  <srs>EPSG:4326</srs>
+  <nativeBoundingBox>
+    <minx>-181.352142333984</minx>
+    <maxx>181.46614074707</maxx>
+    <miny>-59.8222351074219</miny>
+    <maxy>88.6950378417969</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>-181.352142333984</minx>
+    <maxx>181.46614074707</maxx>
+    <miny>-59.8222351074219</miny>
+    <maxy>88.6950378417969</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-3d274ac1:16b9aaf240a:-7ffd</id>
+  </store>
+  <serviceConfiguration>false</serviceConfiguration>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <padWithZeros>false</padWithZeros>
+  <forcedDecimal>false</forcedDecimal>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

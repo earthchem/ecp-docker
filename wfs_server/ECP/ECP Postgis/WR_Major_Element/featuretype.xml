@@ -1,0 +1,40 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-3d274ac1:16b9aaf240a:-7fec</id>
+  <name>WR_Major_Element</name>
+  <nativeName>WR_Major_Element</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-3d274ac1:16b9aaf240a:-7ffe</id>
+  </namespace>
+  <title>WR_Major_Element</title>
+  <keywords>
+    <string>features</string>
+    <string>WR_Major_Element</string>
+  </keywords>
+  <srs>EPSG:4326</srs>
+  <nativeBoundingBox>
+    <minx>-181.544082641602</minx>
+    <maxx>181.466079711914</maxx>
+    <miny>-67.5737991333008</miny>
+    <maxy>88.7335968017578</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>-181.544082641602</minx>
+    <maxx>181.466079711914</maxx>
+    <miny>-67.5737991333008</miny>
+    <maxy>88.7335968017578</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-3d274ac1:16b9aaf240a:-7ffd</id>
+  </store>
+  <serviceConfiguration>false</serviceConfiguration>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <padWithZeros>false</padWithZeros>
+  <forcedDecimal>false</forcedDecimal>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

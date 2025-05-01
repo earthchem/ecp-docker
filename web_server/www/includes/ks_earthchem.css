@@ -1,0 +1,594 @@
+/* CSS Document */
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: .9em;
+	color:black;
+	margin: 0;
+	padding:0;
+	border:0;
+	text-align:left;
+	min-height:100%;
+	min-width:100%;height:100%;
+	background:url('http://geoportal.kgs.ku.edu/earthchem/eej/includes/earthchemTopBack.gif') repeat-x;
+}
+
+html { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: .9em;
+	color:black;
+	margin: 0;
+	padding:0;
+	border:0;
+	text-align:left;
+	min-width:100%;
+	min-height:100%;height:100%;
+	background:white url(http://geoportal.kgs.ku.edu/earthchem/eej/includes/earthchemTopBack.gif) repeat-x;
+}
+
+img{text-decoration:none;border:none;margin:0px;padding:0px}
+
+table.ku_nogrid_outer {padding: 0px; border:none; border-collapse:collapse;}
+table.ku_nogrid_outer td {font-size:inherit; font-style:inherit; border:none; border-collapse:collapse; background-color:white; padding:10px; vertical-align:middle; margin:0 }
+
+table.ku_grid_outer {padding: 0px; border: none;}
+table.ku_grid_outer td {font-family:inherit; font-size:inherit; font-weight:normal; font-style:normal;  border:1px solid gray; background-color:white;
+vertical-align: middle; padding: 10px; margin:0;}
+
+table.ku_grid {padding: 0px; border:none; }
+table.ku_grid td { font:inherit; font-family:inherit; font-size:inherit; font-weight:normal; font-style:normal;  border: 1px solid gray; background-color:white;
+vertical-align: middle; padding: 10px; margin:0;}
+
+table.ku_nogrid  {padding: 0px; margin:-5px;border: none; border:none; border-collapse_collapse;}
+table.ku_nogrid td { font:inherit; font-family:inherit; font-size:inherit; font-weight:normal; font-style:normal;  border: none; background-color:white;
+vertical-align: middle; padding: 5px; margin:0;}
+
+table.ku_htmloutput {padding:0px;border:none;border-collapse:collapse;margin-right:20px}
+table.ku_htmloutput td {font:inherit;font-family:inherit;font-size:inherit;font-weight:normal;font-style:normal;border:1px solid gray;
+vertical-align:middle;padding:5px;margin:0;}
+/*Additional style for the KU search pages. More padding in the table cells. A brighter orange-brown against charcoal for the table headings for html output.*/
+table.ku_htmloutput td.alternate{background-color:#fde6c2} /* peachy for alternate rows */
+table.ku_htmloutput th{background-color:#333333;color:#fb8f4e;border:1px solid #333333;font-style:normal;font-weight:bold;padding:5px;} /* orangish against charcoal for headings*/
+table.ku_htmloutput a{color:color:#fb8f4e}
+
+table.ku_sources{border:solid 2px #fb8f43;padding: 0px; border-collapse:collapse;}/*orangy border*/
+table.ku_sources td{background-color:white;padding:3px;border:2px solid #fb8f4e}/*orangy borders*/
+table.ku_sources th{ background-color:#fde6c2;padding:3px;border:none;font-style:normal;font-weight:bold;}/*peachy background for headings*/ 
+
+table.mytable { padding: 0px; border: none; border: 1px solid #789DB3;}
+table.mytable td { font-size: inherit; border: none; background-color: #F4F4F4; 
+vertical-align: middle; padding: 7px; margin:0px;}
+table.mytable {border-collapse: collapse;}
+table.mytable tr.special td { border: 1px solid #ff0000;  }
+
+ 
+a.ku_menu {
+	border: none;
+	display: block;
+	color: white;
+	padding: 3px 3px 0px 1px;
+	margin: 3px 3px 3px 8px;
+	font-size: 1em;
+	text-decoration : none;
+	text-align: right;
+	width:7em;
+	height: auto;
+	position: relative;
+	clear:none;
+	}
+	
+	
+.menuLayer{
+	position:absolute;
+	float:left;
+	/*left:1em;*/
+	/*border: .1em solid #F0E68C;*/
+	display:none;
+	z-index: 5;
+	width: 7em;
+	height: auto;
+	padding: 0 .5em 0 .5em;
+}
+
+
+.floatlayer  {
+	z-index:1000;
+	position:absolute; 
+	height:auto; 
+	width:7em;
+	text-align:right;
+}
+
+.floatlayer > a{
+	text-decoration: none;
+	color:WHITE;
+}
+
+.floatlayer > a:hover {
+	color: #FFD700; 
+}
+
+
+a.menu1, a.here {
+	border: none;
+	display: block;
+	background-color: Black;
+	/*border: 1px outset #46466B;*/
+	color: #FFFFE0;
+	padding: 3px 3px 0px 1px;
+	margin: 3px 3px 3px 8px;
+	font-size: .9em;
+	text-decoration : none;
+	text-align: right;
+	width:7em;
+	height: auto;
+	position: relative;
+	clear:none;
+	}
+	
+a.here, a.here:hover{
+	color: #F0E68C;
+}
+	
+a.menu2 {	
+	background-attachment : inherit;
+	display: block;
+	font-size: .9em;
+	text-decoration : none;
+	text-align: center;
+	width:7em;
+	height: auto;
+	position: relative;
+	left:10px;
+	clear:none;
+	border: 1px outset #46466B;
+	color: #FFFFE0;
+	padding: 3px 3px 0px 1px;
+	margin: 0 2px 0 2px;
+	background-color: Black;
+	}
+
+a.menu1:hover, a.menu2:hover {
+	color: #FFD700;
+	}
+	
+	
+.loading {
+
+	font-family: verdana,helvetica,arial;
+	font-size: 36px;
+	font-weight: bold;
+	color: #fb8f43;
+	padding-left: 140px;
+	padding-top: 100px;
+	
+
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#mapDiv {
+	width: 800px;
+	height: 400px;
+	border: 1px solid black;
+}
+
+#mapDivdyn {
+	z-index: -25;
+	width: 400px;
+	height: 400px;
+	border: 1px solid black;
+}
+
+
+
+
+
+/*for popout windows*/
+html.pop, body.pop {	
+	margin: 0 0 0 10px;
+	text-align:left;
+	padding:0 0 0 10px;
+	border:0;
+	background: none;
+	width: auto;
+	min-width: 10px;
+	height: 100%;
+	min-height: 100%;
+}
+
+.karin1 {color: #009999; font-style: normal;}
+.karin2 {color: #009999; font-weight: bold; }
+
+.forceIE{width:700px; background:transparent;} 
+
+#header{
+	margin:0;
+	padding:0;
+	border:0;
+	min-width:60em;
+	height:91px;
+	background: White url(../images/earthchemTopBack.gif) repeat-x top left;
+	color: #003176;
+	display: block;
+}
+
+#wrapper{
+	font-size: inherit;
+	margin: 0;
+	padding:0;
+	text-align: left;
+	min-width:65em;
+	width: auto;
+}
+
+#content{
+	font-size: inherit;
+	margin: 0 0 0px 15px;
+	padding: 0 0 0px 15px;
+	border:0;
+	display: block;
+	/*color: #9D4123;*/
+	color: Black;
+	text-align: left;
+	min-width:50em;
+	width:80%;
+	height:100%;
+	float:left;
+	}
+
+#srchTabs{
+	display: block;
+	background: WHITE url(../images/srchtab_bk.gif) repeat-x top left;
+	width: 98%;
+	position: relative;
+	z-index: 2;
+	float: left;
+	clear: both;
+}	
+
+#rtMenu{
+	float:right;
+	clear:none;
+	width:10%;
+	height: auto;
+	border-bottom: none;
+	border-left: 3px double #ABBDDC;
+	padding-left: 5px;
+}
+	
+
+#menu{
+		font-size: medium;
+		margin:0;
+		padding:0px;
+		border:0;
+		width:7.5em;
+		min-height:10em;
+		height:100%;
+		z-index:4;
+		float: left;
+		clear:left;
+}
+
+#row{
+	font-size: inherit;
+	margin: 0px 5px 2px 2px;
+	padding: 0px 5px 2px 2px;
+	border:0;
+	min-width: 50em;
+	width:90%;
+	display:inline;
+	float:left;
+}
+
+#advanced {
+	top:0px;
+	/*width: 100%;*/
+	display: none;
+}
+
+#footer{
+	font-size: inherit;
+	margin: 10px;
+	padding: 10px 20px;
+	border:0;
+	width:100%;
+	height:45px;
+	bottom: 2px;
+}
+
+.row_sec{
+	display:inline;
+	float:left;
+	width:auto;
+}
+
+/*layer styles */
+
+
+
+
+
+
+
+.column1{
+	/*display: block;*/
+	top: 0px;
+	width: auto;
+	height: auto;
+	margin: 0 1% 0 0;
+	float: left;
+}
+
+.column2{
+	top: 0px;
+	width: auto;
+	margin: 0 0 0 1%;
+	float: left;
+}
+
+.page {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #C3CAD1;
+	font-size: .9em;
+	text-align: left;
+}
+
+.row{
+	font-size: inherit;
+	margin: 5px 2px 2px 2px;
+	padding: 5px 2px 2px 2px;
+	border:0;
+	min-width: 50em;
+	width:100%;
+	display:block;
+	/*float:left;*/
+}
+
+/* image styles */
+
+img.pd{
+	margin:2px;
+	padding:2px;
+	border:0;
+}
+
+img.info {
+	margin-bottom:-.8em;
+	padding-bottom:0;
+}
+
+img.brdr{	
+	margin:0px;
+	padding:0px;
+	border: .5px solid Black;
+}
+
+.imgColR{
+	clear: right;
+	margin-left: 10px;
+	padding-left: 10px;
+	float:right; 
+	display:block;
+}
+
+.imgColL{
+	margin-right: 10px;
+	padding-right: 10px;
+	float:left; 
+	display:block;
+}
+
+/* anchor styles */
+
+	
+/* anchor styles */
+.topmenu, a.topmenu {
+	border-left: 1px solid #999999;
+	border-right: 1px outset #999999;
+	border-bottom:1px solid #999999;
+	border-top: none;
+	display: inline;
+	background-color: #CE6328;
+	color: #FAFAD2;
+	padding-left: 4px;
+	padding-right: 4px;
+	/*margin: 1px 1px 3px 1px;*/
+	font-size: .9em;
+	text-decoration : none;
+	text-align: center;
+	width: auto;
+	height: auto;
+	position: relative;
+	clear: both;
+	font-weight: bold;
+	}
+
+a.topmenu:hover{
+	background-color: #E2946A;
+	color: White;
+	text-decoration : none;	
+	border: 1px solid #DCDCDC;
+}	
+
+.topmenu	{
+	border-left: none;
+	border-right: none;
+	border-bottom:1px solid #999999;
+}
+/*a {
+	color: #E16000;
+	text-decoration: none;
+}*/
+
+a.top {
+	color: #E9C267;
+	text-decoration: none;
+}
+
+a.top:hover {
+	color: #F0E68C;
+	text-decoration: none;
+}
+
+a, a.site {
+	color: #9B6C4D;
+	text-decoration: underline;
+}
+
+a:hover, a.site:hover {
+	color: #FF8C00;
+	text-decoration: underline;
+}
+
+/* html element styles */
+h1, h2, h3, h4 {
+	/*color: Black;*/
+	/*color: #B85818;*/
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	/*font-style: italic;*/
+	font-weight: bold;
+	/*font-variant: small-caps;*/
+	margin-top: .1%;
+	padding-top: .1%;
+	margin-bottom: .1%;
+	padding-bottom: .1%;
+}
+
+h1{
+	color: #984812;
+	font-size: 1.75em;
+}
+
+h2 {
+	color: #AD4A08;
+	font-size: 1.4em;
+}
+
+h3 {
+	color: #AF5010;
+	font-size: 1.2em;
+	}
+	
+h4 {
+	color: #BD4F24;
+	font-size: 1em;
+	}
+	
+h2 + p, h4 + p, h3 + p {
+	margin-top: .1%;
+}
+
+ h2 + h4, .lt_line + h3 {
+	margin-top: .5%;
+}
+
+li {
+	margin-bottom: .4em;
+}
+
+
+html, body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: .9em;
+	margin: 0;
+	text-align:left;
+	padding:0;
+	border:0;
+	width: auto;
+	height: 100%;
+	width:100%;
+	/*min-height:100%;min-width:100%;*/
+}
+html {	
+	background: url(http://geoportal.kgs.ku.edu/earthchem/portal/images/earthchemTopBack.gif) repeat-x; /*only this works on wider-than-viewport pages on FF*/
+}
+body {	
+	background: url(http://geoportal.kgs.ku.edu/earthchem/portal/images/earthchemTopBack.gif) repeat-x;
+}
+
+h1, h2, h3, h4 {
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	margin-top: .1%;
+	padding-top: .1%;
+	margin-bottom: .1%;
+	padding-bottom: .1%;
+}
+
+.emphasis2 { /*for the footer*/
+	font-style: italic;
+   color: #003466;
+}
+/* for Internet Explorer */
+* html .thecontent {height: 100%}
+* html .thecontent {width: 100%}
+
+#menu {font-size:16px;}
+
+.mapdetails {
+    color: #984812;
+	border-style: dashed;
+	border-width: 1px;
+	padding: 5px;
+	width: 770px;
+	background-color: #FFFFE6;
+    border-color: #FFA200;
+    margin-bottom: 5px;
+}
+
+.legendtd {
+	border-style: solid;
+	border-width: 1px;
+}
+
+.legendtable {
+	font-weight: bold;
+	font-size: .8em;
+}
+
+

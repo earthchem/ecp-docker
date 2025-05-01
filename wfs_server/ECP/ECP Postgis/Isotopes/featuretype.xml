@@ -1,0 +1,40 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-3d274ac1:16b9aaf240a:-7ffa</id>
+  <name>Isotopes</name>
+  <nativeName>Isotopes</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-3d274ac1:16b9aaf240a:-7ffe</id>
+  </namespace>
+  <title>Isotopes</title>
+  <keywords>
+    <string>features</string>
+    <string>Isotopes</string>
+  </keywords>
+  <srs>EPSG:4326</srs>
+  <nativeBoundingBox>
+    <minx>-181.618499755859</minx>
+    <maxx>181.678497314453</maxx>
+    <miny>-85.4529037475586</miny>
+    <maxy>90.8729019165039</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>-181.618499755859</minx>
+    <maxx>181.678497314453</maxx>
+    <miny>-85.4529037475586</miny>
+    <maxy>90.8729019165039</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-3d274ac1:16b9aaf240a:-7ffd</id>
+  </store>
+  <serviceConfiguration>false</serviceConfiguration>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <padWithZeros>false</padWithZeros>
+  <forcedDecimal>false</forcedDecimal>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

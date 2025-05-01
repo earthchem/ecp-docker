@@ -1,0 +1,33 @@
+MAP
+  NAME MAP_POINTS
+  SIZE 600 300
+  EXTENT -6200000 -6200000 6200000 6200000
+  IMAGETYPE png
+  PROJECTION
+    "init=epsg:3031"
+
+  END
+
+  LAYER # Topo WMS map from MGDS
+    NAME         mgdstopo
+    TYPE         RASTER
+    OFFSITE      0 0 0
+    STATUS       ON
+    CONNECTIONTYPE WMS
+    #CONNECTION "http://gmrt.marine-geo.org/cgi-bin/mapserv?map=/public/mgg/web/gmrt.marine-geo.org/htdocs/services/map/wms_merc.map&"
+    #CONNECTION "http://gmrt.marine-geo.org/cgi-bin/mapserv?map=/public/mgg/web/gmrt.marine-geo.org/htdocs/services/map/wms_sp.map&"
+    CONNECTION "https://www.gmrt.org/services/mapserver/wms_SP?"
+
+    METADATA
+      "wms_srs" "EPSG:3031"
+      "wms_name" "South_Polar_Bathymetry"
+      "wms_server_version" "1.1.1"
+      "wms_format" "image/png"
+    END
+
+    PROJECTION
+      "init=epsg:3031"
+    END
+  END # Topo WMS map from MGDS
+
+END

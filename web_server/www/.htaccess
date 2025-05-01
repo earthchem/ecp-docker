@@ -1,0 +1,5 @@
+Header set Access-Control-Allow-Origin "*"
+
+RewriteEngine on
+RewriteRule ^mapajax.js$ mapajax.php [L]
+RewriteRule ^legend.jpg$ legend.php [L]

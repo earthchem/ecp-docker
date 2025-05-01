@@ -1,0 +1,40 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-3d274ac1:16b9aaf240a:-7ff8</id>
+  <name>NobleGas</name>
+  <nativeName>NobleGas</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-3d274ac1:16b9aaf240a:-7ffe</id>
+  </namespace>
+  <title>NobleGas</title>
+  <keywords>
+    <string>features</string>
+    <string>NobleGas</string>
+  </keywords>
+  <srs>EPSG:4326</srs>
+  <nativeBoundingBox>
+    <minx>-180.267486572266</minx>
+    <maxx>177.772476196289</maxx>
+    <miny>-85.3784027099609</miny>
+    <maxy>75.8984069824219</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>-180.267486572266</minx>
+    <maxx>177.772476196289</maxx>
+    <miny>-85.3784027099609</miny>
+    <maxy>75.8984069824219</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-3d274ac1:16b9aaf240a:-7ffd</id>
+  </store>
+  <serviceConfiguration>false</serviceConfiguration>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <padWithZeros>false</padWithZeros>
+  <forcedDecimal>false</forcedDecimal>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

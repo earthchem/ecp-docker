@@ -1,0 +1,78 @@
+MAP
+  EXTENT         -180 -90 180 90
+  SIZE           400 300
+  IMAGECOLOR     255 255 255
+  SHAPEPATH      "/var/www/html/"
+  PROJECTION
+    "init=epsg:4326"
+    "proj=latlong"
+  END
+
+  OUTPUTFORMAT
+    NAME "png"
+    DRIVER AGG/PNG
+    MIMETYPE "image/png"
+    IMAGEMODE RGB
+    EXTENSION "png"
+    FORMATOPTION "GAMMA=0.75"
+    TRANSPARENT ON
+  END
+
+  LAYER # Topo WMS map from MGDS
+    NAME         mgdstopo2
+    TYPE         RASTER
+    OFFSITE      0 0 0
+    STATUS       ON
+    CONNECTIONTYPE WMS
+
+    CONNECTION "https://www.gmrt.org/services/mapserv/wms_merc?"
+
+    METADATA
+      "wms_srs" "EPSG:4326"
+      "wms_name" "topo"
+      "wms_server_version" "1.3.0"
+      "wms_format" "image/png"
+    END
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+  END # Topo WMS map from MGDS
+
+  LAYER # Countris polygon layer begins here
+    NAME 		country_line
+    DATA 		world_borders
+    STATUS       ON
+    #TRANSPARENCY ALPHA
+    OFFSITE 255 255 255
+    TYPE         LINE
+
+    CLASS
+      NAME       "Country Lines"
+
+      STYLE
+        COLOR        75 75 75
+        OUTLINECOLOR 32 32 32
+      END
+    END
+  END
+
+  LAYER # States polygon layer begins here
+    NAME 		state_line
+    DATA 		fe_2007_us_state00
+    STATUS       ON
+    #TRANSPARENCY ALPHA
+    TYPE         LINE
+
+    CLASS
+      NAME       "State Lines"
+
+      STYLE
+        COLOR        75 75 75
+        OUTLINECOLOR 32 32 32
+      END
+    END
+  END
+
+END

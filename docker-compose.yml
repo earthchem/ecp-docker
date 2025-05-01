@@ -1,0 +1,27 @@
+services:
+  ecp_web:
+    build: 
+      dockerfile: web_server/Dockerfile
+    hostname: ecp-web
+    container_name: ecp_web
+    ports:
+     - "80:80"
+    volumes:
+      - type: bind
+        source: web_server_data/plots
+        target: /srv/app/www/ecplots/plots
+      - type: bind
+        source: web_server_data/hist2dplots
+        target: /srv/app/www/hist2dplots
+  ecp_wfs:
+    build: 
+      dockerfile: wfs_server/Dockerfile
+    hostname: ecp-wfs
+    container_name: ecp_wfs
+    restart: always
+    ports:
+     - "8080:8080"
+    volumes:
+      - type: bind
+        source: wfs_server_data/logs
+        target: /usr/local/tomcat/logs

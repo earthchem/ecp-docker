@@ -1,0 +1,40 @@
+<featureType>
+  <id>FeatureTypeInfoImpl-3d274ac1:16b9aaf240a:-7ff2</id>
+  <name>Trace_Element</name>
+  <nativeName>Trace_Element</nativeName>
+  <namespace>
+    <id>NamespaceInfoImpl-3d274ac1:16b9aaf240a:-7ffe</id>
+  </namespace>
+  <title>Trace_Element</title>
+  <keywords>
+    <string>features</string>
+    <string>Trace_Element</string>
+  </keywords>
+  <srs>EPSG:4326</srs>
+  <nativeBoundingBox>
+    <minx>-181.458923339844</minx>
+    <maxx>180.711929321289</maxx>
+    <miny>-44.2694206237793</miny>
+    <maxy>88.6298217773438</maxy>
+  </nativeBoundingBox>
+  <latLonBoundingBox>
+    <minx>-181.458923339844</minx>
+    <maxx>180.711929321289</maxx>
+    <miny>-44.2694206237793</miny>
+    <maxy>88.6298217773438</maxy>
+    <crs>EPSG:4326</crs>
+  </latLonBoundingBox>
+  <projectionPolicy>FORCE_DECLARED</projectionPolicy>
+  <enabled>true</enabled>
+  <store class="dataStore">
+    <id>DataStoreInfoImpl-3d274ac1:16b9aaf240a:-7ffd</id>
+  </store>
+  <serviceConfiguration>false</serviceConfiguration>
+  <maxFeatures>0</maxFeatures>
+  <numDecimals>0</numDecimals>
+  <padWithZeros>false</padWithZeros>
+  <forcedDecimal>false</forcedDecimal>
+  <overridingServiceSRS>false</overridingServiceSRS>
+  <skipNumberMatched>false</skipNumberMatched>
+  <circularArcPresent>false</circularArcPresent>
+</featureType>

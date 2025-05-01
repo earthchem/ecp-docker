@@ -1,0 +1,187 @@
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>EarthChem Portal</title>
+<link href="http://matisse.kgs.ku.edu/earthchemphp2/includes/ks_earthchem.css" rel="stylesheet" type="text/css" />
+
+<?
+//glossary rss feed here
+if($_SERVER['SCRIPT_NAME']=="/glossary.php"){
+?>
+<link rel="alternate" type="application/rss+xml" title="Everything RSS" href="http://www.earthchemportal.org/glossaryrss.php" />
+<?
+}
+?>
+
+<script type="text/javascript">
+var switchTo;
+
+function switchView(switchTo){
+	document.getElementById('srchChoice').src = "/seddbWeb/images/" + switchTo + "bar.gif";
+	if(switchTo == 'advanced')showLayer('advanced');
+	if(switchTo == 'basic')hideLayer('advanced');
+	return;
+}
+/* Functions by the same name exist in the Help layer JavaScript */
+function xxxshowLayer(id) {
+	document.getElementById(id).style.display = "block";
+	return;
+}
+
+function xxxhideLayer(id) {
+	document.getElementById(id).style.display = "none";
+	return;
+}
+
+function showBlock(link, id) {
+var thsObj =  document.getElementById(id);
+var parentObj=document.getElementById("menu");
+//alert(parentObj);
+var divItems = parentObj.getElementsByTagName("div");
+for (i=0; i<divItems.length; i++){
+		if (divItems[i] != thsObj){
+		if(divItems[i].style.display == 'block') divItems[i].style.display = 'none';
+	}
+}
+
+thsObj.style.left= (findPosX(parentObj) + parentObj.offsetWidth - 25) + "px";
+thsObj.style.top= findPosY(link) + "px";
+thsObj.style.display = 'block';
+setTimeout('wait()', 300);
+return;
+}
+
+function wait(){
+clearTimeout();
+}
+
+  function findPosX(obj)
+  {
+    var curleft = 0;
+    if(obj){
+    if(obj.offsetParent)
+        while(1)
+        {
+          curleft += obj.offsetLeft;
+          if(!obj.offsetParent)
+            break;
+          obj = obj.offsetParent;
+        }
+    else if(obj.x)
+        curleft += obj.x;
+    return curleft;}
+  }
+
+  function findPosY(obj)
+  {
+    var curtop = 0;
+    if(obj){
+    if(obj.offsetParent)
+        while(1)
+        {
+          curtop += obj.offsetTop;
+          if(!obj.offsetParent)
+            break;
+          obj = obj.offsetParent;
+        }
+    else if(obj.y)
+        curtop += obj.y;
+    return curtop;}
+  }
+
+function stayOn(link){link.style.display = 'block';}
+
+function goOff(link){
+	if(link.style)link.style.display = 'none';
+}
+
+function hideAll(){
+var parentObj = document.getElementById("menu");
+var divItems = parentObj.getElementsByTagName("div");
+for (i=0; i<divItems.length; i++){
+	if(divItems[i].style.display == 'block') divItems[i].style.display = 'none';
+    }
+}
+
+function showdebug(){
+	document.getElementById('debug').style.display='block';
+}
+
+</script>
+
+
+
+<link href="css/dropdown/dropdown.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/dropdown/themes/nvidia.com/default.advanced.css" media="screen" rel="stylesheet" type="text/css" />
+
+<!--[if lt IE 7]>
+<script type="text/javascript" src="js/jquery/jquery.js"></script>
+<script type="text/javascript" src="js/jquery/jquery.dropdown.js"></script>
+<![endif]-->
+
+<!-- / END -->
+
+
+
+</head>
+
+<body  style="min-height:100%;min-width:100%;margin:0;padding:0;position:absolute;top:0px;left:0px;"><a name="top"></a>
+
+
+<ul class="dropdown dropdown-horizontal">
+	<li><a href="./">New Search</a></li>
+	<li><a href="glossary.php" class="dir">Glossary</a>
+		<ul>
+			<li><a href="glossary.php">Glossary Home</a></li>
+			<li><a href="login.php">Log In</a></li>
+			<li><a href="logout.php">Log Out</a></li>
+			<li><a href="register.php">Register</a></li>
+		</ul>
+	</li>
+	<li><a href="search_citations.php">Citations</a></li>
+	<li><a href="login.php" class="dir">Account</a>
+		<ul>
+			<li><a href="login.php">Log In</a></li>
+			<li><a href="logout.php">Log Out</a></li>
+			<li><a href="register.php">Register</a></li>
+		</ul>
+	</li>
+	<li><a href="savedqueries.php">Saved Queries</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="thecontent" style="min-height:100%;overflow:visible;
+position:absolute;top:0;left:5px;;position:absolute;top:0;left:5px;margin-left:0px;margin-right:20px;">
+
+<table id="themaintable" width="838" height="100%" border="0" cellspacing="0" cellpadding="0" style="margin:0px;">
+<tr>
+<td colspan="2" width="154" valign="top">
+
+</tr>
+
+<tr>
+
+<td valign="top">
+
+<!-- The page header ends here. -->
+
+<div style="height:40px;"></div>

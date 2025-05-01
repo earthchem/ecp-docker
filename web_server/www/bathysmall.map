@@ -1,0 +1,82 @@
+MAP
+  NAME MAP_POINTS
+  SIZE 600 300
+  EXTENT -180 -90 180 90
+  IMAGETYPE jpeg
+  PROJECTION
+    "init=epsg:4326"
+    "proj=latlong"
+  END
+
+  LAYER # Topo WMS map from MGDS
+    NAME         mgdstopo
+    TYPE         RASTER
+    OFFSITE      0 0 0
+    STATUS       ON
+    CONNECTIONTYPE WMS
+    #CONNECTION "http://gmrt.marine-geo.org/cgi-bin/mapserv?map=/public/mgg/web/gmrt.marine-geo.org/htdocs/services/map/wms_merc.map&"
+    CONNECTION "http://gmrt.marine-geo.org/cgi-bin/mapserv?map=/public/mgg/web/gmrt.marine-geo.org/htdocs/services/map/wms_merc.map&"
+    #CONNECTION "https://www.gmrt.org/cgi-bin/mapserv?map=/gmrt/public/mgg/web/cloud-www.gmrt.org/includes/mapfiles/wms_merc.map&"
+    
+
+    
+
+    METADATA
+      "wms_srs" "EPSG:4326"
+      "wms_name" "topo"
+      "wms_server_version" "1.1.1"
+      "wms_format" "image/jpeg"
+    END
+
+    PROJECTION
+      "init=epsg:4326"
+    END
+  END # Topo WMS map from MGDS
+
+  LAYER # begin antialiased country boundary (line) layer
+    NAME 'country_line'
+    DATA 'world_borders'
+    TYPE LINE
+    STATUS ON
+    TRANSPARENCY ALPHA
+    
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    CLASS
+      NAME "0"
+      STYLE
+        COLOR 96 96 96
+        WIDTH 2
+        ANTIALIAS TRUE
+      END
+    END
+  END # end country boundary layer
+  
+  
+  LAYER # state layer
+    NAME "state_line"
+    DATA "fe_2007_us_state00"
+    TYPE LINE
+    STATUS ON
+    TRANSPARENCY ALPHA
+    
+    PROJECTION
+      "init=epsg:4326"
+    END
+
+    CLASS
+      NAME "0"
+      STYLE
+        COLOR 120 120 120
+        WIDTH 3
+        #ANTIALIAS TRUE
+      END
+    END
+  END # end state boundary layer
+
+
+
+
+END
