@@ -6,7 +6,7 @@ The EarthChem Portal (ECP) is a one-stop shop for geochemistry data of the solid
 
 This repository offers a portable, Docker-based infrastructure to run the ECP frontend applications, which include both the ECP Web and ECP WFS servers.
 
-## Setting Up the Web Server
+## Setting Up and Running the Web Server
 
 Follow these steps to configure and deploy the ECP web server:
 
@@ -47,7 +47,7 @@ Follow these steps to configure and deploy the ECP web server:
     ```bash
         docker compose -f docker-compose.yml up -d --build ecp_web
     ```
-## Setting Up the Web Server
+## Setting Up and Running the WFS Server
 
 To configure the ECP WFS server, complete the following steps:
 1. **Modify the `Dockerfile` In the `wfs_server`**  
@@ -72,6 +72,18 @@ To configure the ECP WFS server, complete the following steps:
     - You will find a record(workspace:ECP,Store Name:ECP Postgis, Type:PostGIS) on the page 'Stores' and clik on the 'ECP Postgis' link.
     - Update `Connection Parameters` on the page `Edit Vector Data Source`
     
+## Create Docker Image of the Web Server
+    ```bash
+        docker build --file web_server/Dockerfile --platform linux/amd64 --no-cache --tag ecp_web:bookworm-slim .
+    ```
+## Create Docker Image of the WFS Server
+    ```bash
+        docker build --file wfs_server/Dockerfile --platform linux/amd64 --no-cache --tag ecp_wfs:9.0.104-jre17-temurin-noble .
+    ```
+## Running Servers with Images
+    ```bash
+        docker compose -f docker-compose-with-image.yml up
+    ```
 ## Documentation (ecp_web source code:web_server/www)
 
 ### fonts

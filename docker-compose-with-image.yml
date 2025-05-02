@@ -1,0 +1,25 @@
+services:
+  ecp_web:
+    image: earthchemdocker/ecp_web:bookworm-slim
+    hostname: ecp-web
+    container_name: ecp_web
+    ports:
+     - "80:80"
+    volumes:
+      - type: bind
+        source: web_server_data/plots
+        target: /srv/app/www/ecplots/plots
+      - type: bind
+        source: web_server_data/hist2dplots
+        target: /srv/app/www/hist2dplots
+  ecp_wfs:
+    image: earthchemdocker/ecp_wfs:9.0.104-jre17-temurin-noble
+    hostname: ecp-wfs
+    container_name: ecp_wfs
+    restart: always
+    ports:
+     - "8080:8080"
+    volumes:
+      - type: bind
+        source: wfs_server_data/logs
+        target: /usr/local/tomcat/logs
