@@ -60,7 +60,7 @@ if($earthchem){
 	?>
 	<div style="width:800px;text-align:right;">
 	<?
-	echo "<input type=button value=\"Back to EarthChem Output\" onClick=\"window.location = 'http://portal.earthchem.org/results.php?pkey=$pkey';\">";
+	echo "<input type=button value=\"Back to EarthChem Output\" onClick=\"window.location = 'https://portal.earthchem.org/results.php?pkey=$pkey';\">";
 	?>
 	</div>
 	<input type=button value="Click Here for SVG TAS" onClick="window.location = '/tas.php?pkey=<?=$pkey?><?=$sourcelinktext?>';">

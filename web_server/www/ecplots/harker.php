@@ -35,7 +35,7 @@ if($earthchem){
 	?>
 	<div style="width:800px;text-align:right;">
 	<?
-	echo "<input type=button value=\"Back to EarthChem Output\" onClick=\"window.location = 'http://portal.earthchem.org/results.php?pkey=$pkey';\">";
+	echo "<input type=button value=\"Back to EarthChem Output\" onClick=\"window.location = 'https://portal.earthchem.org/results.php?pkey=$pkey';\">";
 	?>
 	</div>
 	<?
