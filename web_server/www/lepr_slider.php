@@ -243,7 +243,7 @@ body,table,td,th,p,div,input {
 		<h1>LEPR Search Interface</h1>
 		
 		<div class="exampleIntro">
-			<p>This interface allows you to find similar samples from the <a href="http://lepr.ofm-research.org" target="_blank">LEPR</a> database.</p>
+			<p>This interface allows you to find similar samples from the <a href="https://lepr.earthchem.org/" target="_blank">LEPR</a> database.</p>
 		<ul>
 			<li>The sliders below are used to define a chemistry query for LEPR.</li>
 			<li>Initially, all sliders are set to +/-5% of values found for Earthchem sample.</li>
