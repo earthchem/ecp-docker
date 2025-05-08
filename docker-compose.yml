@@ -25,3 +25,18 @@ services:
       - type: bind
         source: wfs_server_data/logs
         target: /usr/local/tomcat/logs
+  ecp_haproxy:
+    image: haproxy:2.8.3
+    container_name: ecp_haproxy
+    restart: always
+    ports:
+     - "80:80"
+     - "443:443"
+    volumes:
+      - type: bind
+        # replace example.org.pem with proper pem file
+        source: haproxy/certs/example.org.pem
+        target: /usr/local/etc/haproxy/certs/example.org.pem
+      - type: bind
+        source:  haproxy/haproxy.cfg
+        target: /usr/local/etc/haproxy/haproxy.cfg
