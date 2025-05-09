@@ -3,6 +3,7 @@ services:
     image: earthchemdocker/ecp_web:bookworm-slim
     hostname: ecp-web
     container_name: ecp_web
+    restart: always
     volumes:
       - type: bind
         source: web_server_data/plots
