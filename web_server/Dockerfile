@@ -26,6 +26,7 @@ RUN apt-get install -y \
     php5.6-bz2 \
     php5.6-bcmath \
     php5.6-pgsql \
+    php5.6-xml \
     php5.6-gd \
     php5.6-mbstring \
     php5.6-zip

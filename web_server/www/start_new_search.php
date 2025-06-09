@@ -33,7 +33,10 @@ $search_query_pkey=$pkey;
 $TimeStamp=date("l, m,d,Y H:i:s");
 
 // Get ip address and browers
-$ip=$_SERVER['REMOTE_ADDR'];
+$client_ip = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
+$ip_arr = explode(",", $client_ip);
+// Remove IPv6-mapped prefix (::ffff:)
+$ip = preg_replace('/^::ffff:/', '', $ip_arr[0]);
 $browser=$_SERVER['HTTP_USER_AGENT'];
 
 // KGS database not setup to auto increment, so hit the table and grab the last record
@@ -46,7 +49,7 @@ $MajorElementNormalization="Major_Elements_as_Reported";
 $SearchDataSource = "NAVDAT";
 $SearchOptions = "REGULAR";
 $QueryName = "Untitled";
-$UserPkey = 0; 
+$UserPkey = 0;
 $LongitudeEast = 0.0;
 $LongitudeWest = 0.0;
 $LatitudeNorth = 0.0;
@@ -70,14 +73,11 @@ $Number_of_samples = 5;
 /*
 $db->query("INSERT INTO search_query (pkey,time_stamp,ip,browser,MajorElementNormalization,SearchDataSource,SearchOptions,QueryName,UserPkey,LongitudeEast,LongitudeWest,LatitudeNorth,LatitudeSouth,MaximumAge,MinimumAge,number_of_samples,YearMax,YearMin,NavdatSampleRecordCount,DDS14SampleRecordCount,NewMexicoSampleRecordCount,IGS_DADSampleRecordCount,PetrosSampleRecordCount,USGSJNGSampleRecordCount)
    VALUES ($CurrentPkey,'$TimeStamp','$ip','$browser','$MajorElementNormalization','$SearchDataSource','$SearchOptions','$QueryName',$UserPkey,$LongitudeEast,$LongitudeWest,$LatitudeNorth,$LatitudeSouth,$MaximumAge,$MinimumAge,$Number_of_samples,$YearMax,$YearMin,$NavdatSampleRecordCount,$DDS14SampleRecordCount,$NewMexicoSampleRecordCount,$IGS_DADSampleRecordCount,$PetrosSampleRecordCount,$USGSJNGSampleRecordCount)
-	");*/
-	
-	// Eileen try leaving the fields null that are actually null instead of using 0 which is misleading 
-	
-	$db->query("INSERT INTO search_query (pkey,time_stamp,ip,browser,MajorElementNormalization,SearchDataSource,SearchOptions,QueryName)
+        ");*/
+
+        // Eileen try leaving the fields null that are actually null instead of using 0 which is misleading
+
+$db->query("INSERT INTO search_query (pkey,time_stamp,ip,browser,MajorElementNormalization,SearchDataSource,SearchOptions,QueryName)
    VALUES ($CurrentPkey,'$TimeStamp','$ip','$browser','$MajorElementNormalization','$SearchDataSource','$SearchOptions','$QueryName')
-	");
-	
-
-
+        ");
 ?>
