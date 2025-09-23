@@ -1270,7 +1270,7 @@ if ($glossary_entry and is_numeric($glossary_pkey) and is_numeric($glossary->use
 }
 ?>
 
-</td></tr></table>
+</td><td valign="top"><?php echo file_get_contents('message_for_users.html');?></tr></table>
 
 <input type='hidden' name='pkey' value='<?=$pkey ?>'>
 <!---Pass the sample counts, so we can calculate the number of samples and decide whether to post a warning message beside the Dynamikc Map. --->
