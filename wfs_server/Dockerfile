@@ -1,4 +1,4 @@
-FROM tomcat:9.0.104-jre17-temurin-noble
+FROM tomcat:9.0.116-jre17-temurin-noble
 
 RUN apt-get update && apt-get install -y unzip && rm -rf /var/lib/apt/lists/*
 
@@ -13,6 +13,9 @@ COPY ./wfs_server/geoserver-users.xml /usr/local/tomcat/webapps/wfs/data/securit
 
 # Copy the ECP directory to the corresponding workspaces location
 COPY ./wfs_server/ECP /usr/local/tomcat/webapps/wfs/data/workspaces/ECP
+
+# Copy datastore configuration
+COPY ["./wfs_server/datastore.xml", "/usr/local/tomcat/webapps/wfs/data/workspaces/ECP/ECP Postgis/datastore.xml"]
 
 # Copy tomcat configuration
 COPY ./wfs_server/server.xml /usr/local/tomcat/conf/server.xml
